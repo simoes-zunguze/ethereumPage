@@ -190,7 +190,7 @@
                     nulla, reprehenderit et deleniti eligendi veniam magnam omnis est aut saepe accusantium mollitia
                     consequuntur excepturi facilis. </p>
             </div>
-            <div class="about-row" data-aos="zoom-in">
+            <div id="project-list" class="about-row" data-aos="zoom-in">
                 <div class="card">
                     <div class="icon">
                         <img src="./img/bc.png" alt="">
@@ -210,33 +210,6 @@
                         <button onclick="showPortfolioPopup('CIP')" class="button button-success">Details</button>
 
                     </div>
-                </div>
-
-                <div class="card">
-                    <div class="icon">
-                        <i class="fa fa-tasks title-style"></i>
-                    </div>
-                    <h3>
-                        MISSION
-                    </h3>
-                </div>
-
-                <div class="card">
-                    <div class="icon">
-                        <i class="fa fa-tasks title-style"></i>
-                    </div>
-                    <h3>
-                        MISSION
-                    </h3>
-                </div>
-
-                <div class="card">
-                    <div class="icon">
-                        <i class="fa fa-tasks title-style"></i>
-                    </div>
-                    <h3>
-                        MISSION
-                    </h3>
                 </div>
 
                 <!-- <div class="card">
@@ -621,6 +594,8 @@
         ];
 
         // Portifolio
+        let projectList = document.getElementById('project-list');
+
         let projectTitle = document.getElementById('project-title');
         let projectDesc = document.getElementById('project-desc');
         let projectImage = document.getElementById('project-image');
@@ -657,6 +632,7 @@
                 (tech) => `<div class="technology"> ${tech} </div>`
             );
 
+
             // projectTitle.innerHTML = portfolio.title;
             projectDesc.innerHTML = portfolio.description;
             // projectSource.innerHTML = `<strong>Source: </strong> <a target="_blank" href="${portfolio.source}">${portfolio.source}</a>`;
@@ -669,6 +645,31 @@
 
             showModal();
         }
+
+
+        const portfoliosList = portfolios.map(
+            (p) => `                <div class="card">
+                    <div class="icon" onclick="showPortfolioPopup('${p.title}')">
+                        <img src="${p.image}" alt="">
+                    </div>
+                    <h3>
+                    ${p.title}
+                    </h3>
+                    <div class="card-buttons">
+                        <button class="button button-primary">
+                            In Production
+                        </button>
+                        <a target="_blank" href="${p.livepreview}">
+
+                            <button class="button button-danger">See Live</button>
+                        </a>
+
+                        <button onclick="showPortfolioPopup('${p.title}')" class="button button-success">Details</button>
+
+                    </div>
+                </div>`
+        );
+        projectList.innerHTML = portfoliosList.join(" ")
     </script>
 </body>
 

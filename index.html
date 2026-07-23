@@ -58,9 +58,9 @@
         <div class="modal-hide-trigger" id="modal-hide-trigger"></div>
         <div class="modal-wrapper">
             <div class="portifolio-photo">
-                <img src="./img/bc.png" alt="">
+                <img id="project-image" src="/img/bc.png" alt="">
             </div>
-            <div class="portifolio-photo-list">
+            <div class="portifolio-photo-list" id="project-images">
                 <div class="portifolio-photo-list-item portifolio-photo-list-item-selected">
                     <img src="./img/bc.png" alt="">
                 </div>
@@ -78,17 +78,17 @@
             </div>
             <br>
             <div class="portfolio-details">
-                <div class="portfolio-description">
+                <div id="project-desc" class="portfolio-description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam molestiae sequi, dignissimos sint
                     tempora veritatis assumenda! Commodi nobis, nesciunt repellat in, iste itaque temporibus veritatis
                     qui laborum nulla delectus. Corporis?<br>
-                    <a href="http://">Visit </a>
+                    <a id="project-preview" href="http://">Visit </a>
 
                 </div>
                 <div>
                     <br>
                     <h4>Technologies</h4>
-                    <div class="portifolio-technologies">
+                    <div id="project-tech" class="portifolio-technologies">
                         <div class="technology">
                             react
                         </div>
@@ -207,7 +207,7 @@
                             <button class="button button-danger">See Live</button>
                         </a>
 
-                        <button onclick="showModal()" class="button button-success">Details</button>
+                        <button onclick="showPortfolioPopup('CIP')" class="button button-success">Details</button>
 
                     </div>
                 </div>
@@ -520,14 +520,155 @@
 
 
 
-
-        var portfolios = [
+        let portfolios = [
             {
-                name: "Portifolio Name",
-                link: "",
-                description: "Lorem sadsa ds a dsa ds a dsa  dsadhbyuilghvyuil gbyuilbfgyudailsbvyufdlbgea yuilfedbyui lfbeayul bgfyueilbgvfueil bielfabd"
-            }
-        ]
+                title: 'CIP',
+                image: '/img/bc.png',
+                images: ['/img/bc.png', '/img/logo.png', '/img/partners/p1.png', '/img/partners/p3.png'],
+
+                description:
+                    '2Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam molestiae sequi, dignissimos sint tempora veritatis assumenda! Commodi nobis, nesciunt repellat in, iste itaque temporibus veritatis qui laborum nulla delectus. Corporis?',
+                technologies: [
+                    'typescript',
+                    'express',
+                    'react',
+                    'docker',
+                    'Github actions - CI/CD',
+                    'aws',
+                    'jest',
+                ],
+                source: 'https://github.com/simoes-zunguze/MoneyTracker',
+                livepreview: '#',
+            },
+
+            {
+                title: 'Quick Chat',
+                image: '/assets/img/project2.jpg',
+                images: ['/assets/img/project1.jpg', '/assets/img/project1.jpg', '/assets/img/project1.jpg', '/assets/img/project1.jpg'],
+
+                description:
+                    'A quick and anonymous chat with realtime notification responsive design',
+                technologies: [
+                    'typescript',
+                    'react',
+                    'express',
+                    'socket.io',
+                    'docker',
+                    'vercel',
+                ],
+                source: 'https://github.com/simoes-zunguze/simpleChat.git',
+                livepreview: 'https://chat-pk6p.onrender.com/',
+            },
+            {
+                title: 'AWS Worlflow',
+                image: '/assets/img/project3.jpg',
+                images: ['/assets/img/project1.jpg', '/assets/img/project1.jpg', '/assets/img/project1.jpg', '/assets/img/project1.jpg'],
+
+                description: 'Github to aws devops workflow diagram',
+                technologies: ['github', 'git', 'aws'],
+                source: '/assets/diagram/devops.drawio',
+                livepreview: '/assets/img/project3.jpg',
+            },
+            {
+                title: 'HTML/CSS/JS Landing Page',
+                image: '/assets/img/project5.jpg',
+                images: ['/assets/img/project1.jpg', '/assets/img/project1.jpg', '/assets/img/project1.jpg', '/assets/img/project1.jpg'],
+
+                description: 'Github to aws devops workflow diagram',
+                technologies: ['html', 'css', 'js', 'firebase'],
+                source: 'https://github.com/simoes-zunguze/ethereumPage.git',
+                livepreview: 'https://ether-a2a22.web.app',
+            },
+            {
+                title: 'Queue App',
+                image: '/assets/img/project4.jpg',
+                images: ['/assets/img/project1.jpg', '/assets/img/project1.jpg', '/assets/img/project1.jpg', '/assets/img/project1.jpg'],
+
+                description:
+                    'A queue management sistem with realtime notifications, and virtual keypad',
+                technologies: [
+                    'php',
+                    'laravel',
+                    'javascript',
+                    'vue',
+                    'pusher',
+                ],
+                source: 'https://github.com/simoes-zunguze/SimpleQueue.git',
+                livepreview: '#',
+            },
+            {
+                title: 'Resume Builder (cv.co.mz)',
+                image: '/assets/img/project6.png',
+                images: ['/assets/img/project1.jpg', '/assets/img/project1.jpg', '/assets/img/project1.jpg', '/assets/img/project1.jpg'],
+
+                description:
+                    'A resume builder easy to use with multiple templates and mobile responsive',
+                technologies: [
+                    'NodeJs',
+                    'Typescript',
+                    'React',
+                    'AWS',
+                    'Twilio',
+                    'Google Oauth2',
+                    'Docker',
+                    'Github Actions [CI/CD]',
+                    'AWS',
+                    'Google Firebase',
+                ],
+                source: '#',
+                livepreview: 'https://cv.co.mz',
+            },
+        ];
+
+        // Portifolio
+        let projectTitle = document.getElementById('project-title');
+        let projectDesc = document.getElementById('project-desc');
+        let projectImage = document.getElementById('project-image');
+        let projectImages = document.getElementById('project-images');
+
+        let projectTech = document.getElementById('project-tech');
+        let projectSource = document.getElementById('project-source');
+        let projectPreview = document.getElementById('project-preview');
+
+        // let portfolioPopup = document.getElementById('portfolio-popup');
+        // let closePopup = document.getElementById('close-popup');
+        // closePopup.addEventListener('click', (e) => {
+        //     portfolioPopup.style.display = 'none';
+        // });
+
+        function selectPortifolioImage(img) {
+
+        }
+
+        function showPortfolioPopup(projectName) {
+            const portfolio = portfolios.find(
+                (portfolio) => portfolio.title === projectName
+            );
+
+            const technologies = portfolio.technologies.map(
+                (technologie) => ` <div class="tools">${technologie}</div>`
+            );
+            const portfolioImages = portfolio.images.map(
+                (img) => `<div class="portifolio-photo-list-item portifolio-photo-list-item-selected">
+                    <img src="${img}" alt="">
+                </div>`
+            );
+            const technologiesList = portfolio.technologies.map(
+                (tech) => `<div class="technology"> ${tech} </div>`
+            );
+
+            // projectTitle.innerHTML = portfolio.title;
+            projectDesc.innerHTML = portfolio.description;
+            // projectSource.innerHTML = `<strong>Source: </strong> <a target="_blank" href="${portfolio.source}">${portfolio.source}</a>`;
+            projectTech.innerHTML = technologiesList;
+            // projectPreview.innerHTML = `<strong>Live view: </strong> <a  target="_blank" href="${portfolio.livepreview}">${portfolio.livepreview}</a>`;
+            projectImage.src = portfolio.image;
+            projectImages.innerHTML = portfolioImages;;
+
+            // portfolioPopup.style.display = 'flex';
+
+            showModal();
+        }
     </script>
 </body>
 

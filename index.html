@@ -50,17 +50,84 @@
         </ul>
         <div class="social-networks">
             <i class="fa fa-linkedin-square" onmouseover="this.style.color='#0177b5'"></i>
-            <i class="fa fa-twitter-square" onmouseover="this.style.color='#5ea9dd'"></i>
-            <i class="fa fa-facebook-square" onmouseover="this.style.color='#4867aa'"></i>
+            <!-- <i class="fa fa-twitter-square" onmouseover="this.style.color='#5ea9dd'"></i>
+            <i class="fa fa-facebook-square" onmouseover="this.style.color='#4867aa'"></i> -->
         </div>
     </nav>
+    <div class="modal" id="modal">
+        <div class="modal-hide-trigger" id="modal-hide-trigger"></div>
+        <div class="modal-wrapper">
+            <div class="portifolio-photo">
+                <img src="./img/bc.png" alt="">
+            </div>
+            <div class="portifolio-photo-list">
+                <div class="portifolio-photo-list-item portifolio-photo-list-item-selected">
+                    <img src="./img/bc.png" alt="">
+                </div>
+
+                <div class="portifolio-photo-list-item">
+                    <img src="./img/bc.png" alt="">
+                </div>
+
+                <div class="portifolio-photo-list-item">
+                    <img src="./img/bc.png" alt="">
+                </div>
+                <div class="portifolio-photo-list-item">
+                    <img src="./img/bc.png" alt="">
+                </div>
+            </div>
+            <br>
+            <div class="portfolio-details">
+                <div class="portfolio-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam molestiae sequi, dignissimos sint
+                    tempora veritatis assumenda! Commodi nobis, nesciunt repellat in, iste itaque temporibus veritatis
+                    qui laborum nulla delectus. Corporis?<br>
+                    <a href="http://">Visit </a>
+
+                </div>
+                <div>
+                    <br>
+                    <h4>Technologies</h4>
+                    <div class="portifolio-technologies">
+                        <div class="technology">
+                            react
+                        </div>
+                        <div class="technology">
+                            react
+                        </div>
+                        <div class="technology">
+                            react
+                        </div>
+                        <div class="technology">
+                            react
+                        </div>
+                        <div class="technology">
+                            react
+                        </div>
+                        <div class="technology">
+                            react
+                        </div>
+                        <div class="technology">
+                            react
+                        </div>
+                        <div class="technology">
+                            react
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <div class="container">
+
         <header>
             <div class="header-row">
                 <div class="col col1" data-aos="zoom-in">
-                    <div class="back-items item1">MT</div>
-                    <div class="back-items item2">$</div>
-                    <div class="back-items item3">€</div>
+                    <div class="back-items item1">JAVA</div>
+                    <div class="back-items item2">TS</div>
+                    <div class="back-items item3">JS</div>
 
                     <div class="credit-card">
                         <div class="credit-card-logo">
@@ -74,19 +141,23 @@
                             <div class="grid-item"></div>
                             <div class="grid-item"></div>
                         </div>
-                        <div class="number title-style">
+                        <!-- <div class="number title-style">
                             1234 5678 9012 3456
+                        </div> -->
+
+                        <div class="number title-style">
+                            Full Stack Developer
                         </div>
                         <div class="valid">
                             <div class="col1">
-                                Valid <br> Thru
+                                Birth <br> Date
                             </div>
                             <div class="col2">
                                 01/94
                             </div>
                         </div>
                         <div class="owner">
-                            S. ZUNGUZE
+                            SIMÕES ZUNGUZE
                         </div>
                     </div>
 
@@ -94,12 +165,13 @@
 
                 <div class="col col2" data-aos="zoom-out">
                     <div class="welcome">
-                        Welcome To Ethereum
+                        Hey!, I'm
                     </div>
                     <h1 class="title">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Simões Zunguze, a <span style="color: greenyellow !important;">Fullstack Software
+                            Developer.</span>
                     </h1>
-                    <a class="read-more pulse" href="#about">READ MORE</a>
+                    <a class="read-more pulse" href="#about">Portifolio</a>
                 </div>
             </div>
         </header>
@@ -107,7 +179,7 @@
         <section class="about">
             <div class="description">
                 <h2 class="title-style" data-aos="zoom-in" id="about">
-                    ABOUT
+                    Portifolio
                 </h2>
                 <div class="title-bar" data-aos="zoom-in">
                     <div class="bar"></div>
@@ -121,27 +193,53 @@
             <div class="about-row" data-aos="zoom-in">
                 <div class="card">
                     <div class="icon">
+                        <img src="./img/bc.png" alt="">
+                    </div>
+                    <h3>
+                        MISSION
+                    </h3>
+                    <div class="card-buttons">
+                        <button class="button button-primary">
+                            In Production
+                        </button>
+                        <a target="_blank" href="https://basededadosdecorrupcao.org/public">
+
+                            <button class="button button-danger">See Live</button>
+                        </a>
+
+                        <button onclick="showModal()" class="button button-success">Details</button>
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="icon">
                         <i class="fa fa-tasks title-style"></i>
                     </div>
                     <h3>
                         MISSION
                     </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis facere dolorem a? Debitis, minus
-                        nulla, reprehenderit </p>
                 </div>
+
                 <div class="card">
                     <div class="icon">
-                        <i class="fa fa-users title-style"></i>
+                        <i class="fa fa-tasks title-style"></i>
                     </div>
                     <h3>
-                        VISION
+                        MISSION
                     </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis facere dolorem a? Debitis, minus
-                        nulla, reprehenderit </p>
                 </div>
+
                 <div class="card">
+                    <div class="icon">
+                        <i class="fa fa-tasks title-style"></i>
+                    </div>
+                    <h3>
+                        MISSION
+                    </h3>
+                </div>
+
+                <!-- <div class="card">
                     <div class="icon">
                         <i class="fa fa-lightbulb-o title-style"></i>
                     </div>
@@ -152,7 +250,7 @@
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis facere dolorem a? Debitis, minus
                         nulla, reprehenderit
                     </p>
-                </div>
+                </div> -->
             </div>
 
         </section>
@@ -370,7 +468,7 @@
                         <div class="separator">
 
                         </div>
-                        <a href="#">
+                        <!-- <a href="#">
                             <i class="fa fa-envelope"></i> <span>info@exampe.com</span>
                         </a>
                         <a href="#">
@@ -378,8 +476,8 @@
                         </a>
                         <a href="#">
                             <i class="fa fa-facebook-square"></i> <span>Facebook</span>
-                        </a>
-                        <a href="#">
+                        </a> -->
+                        <a href="https://www.linkedin.com/in/szunguze/">
                             <i class="fa fa-linkedin-square"></i> <span>Linkedin</span>
                         </a>
                     </div>
@@ -408,6 +506,28 @@
             scale: width < 768 ? 1 : 1.4
         });
 
+        const hideModal = () => {
+            modal.style.display = "none"
+        }
+        const showModal = () => {
+            modal.style.display = "flex"
+        }
+
+        var modalHideTrigger = document.getElementById("modal-hide-trigger");
+        var modal = document.getElementById("modal");
+
+        modalHideTrigger.onclick = hideModal;
+
+
+
+
+        var portfolios = [
+            {
+                name: "Portifolio Name",
+                link: "",
+                description: "Lorem sadsa ds a dsa ds a dsa  dsadhbyuilghvyuil gbyuilbfgyudailsbvyufdlbgea yuilfedbyui lfbeayul bgfyueilbgvfueil bielfabd"
+            }
+        ]
     </script>
 </body>
 

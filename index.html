@@ -167,10 +167,11 @@
                     <div class="welcome">
                         Hey!, I'm
                     </div>
-                    <h1 class="title">
-                        Simões Zunguze, a <span style="color: greenyellow !important;">Fullstack Software
-                            Developer.</span>
-                    </h1>
+                    <div class="title">
+                        Simões Zunguze, a <br>
+                        <div class="role">Fullstack Software
+                            Developer.</div>
+                    </div>
                     <a class="read-more pulse" href="#about">Portifolio</a>
                 </div>
             </div>
@@ -488,7 +489,6 @@
 
         var modalHideTrigger = document.getElementById("modal-hide-trigger");
         var modal = document.getElementById("modal");
-
         modalHideTrigger.onclick = hideModal;
 
 
@@ -496,8 +496,8 @@
         let portfolios = [
             {
                 title: 'CIP',
-                image: '/img/bc.png',
-                images: ['/img/bc.png', '/img/logo.png', '/img/partners/p1.png', '/img/partners/p3.png'],
+                image: '/img/projects/p1/1.png',
+                images: ['/img/projects/p1/1.png', '/img/projects/p1/2.png', '/img/projects/p1/3.png', '/img/projects/p1/4.png', '/img/projects/p1/5.png'],
 
                 description:
                     '2Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam molestiae sequi, dignissimos sint tempora veritatis assumenda! Commodi nobis, nesciunt repellat in, iste itaque temporibus veritatis qui laborum nulla delectus. Corporis?',
@@ -592,6 +592,7 @@
                 livepreview: 'https://cv.co.mz',
             },
         ];
+        var selectedPortfolio = portfolios[0];
 
         // Portifolio
         let projectList = document.getElementById('project-list');
@@ -611,7 +612,8 @@
         //     portfolioPopup.style.display = 'none';
         // });
 
-        function selectPortifolioImage(img) {
+        function selectPortifolioImage(index) {
+            projectImage.src = selectedPortfolio.images[index];
 
         }
 
@@ -619,12 +621,15 @@
             const portfolio = portfolios.find(
                 (portfolio) => portfolio.title === projectName
             );
-
+            selectedPortfolio = portfolio;
             const technologies = portfolio.technologies.map(
                 (technologie) => ` <div class="tools">${technologie}</div>`
             );
             const portfolioImages = portfolio.images.map(
-                (img) => `<div class="portifolio-photo-list-item portifolio-photo-list-item-selected">
+                (img, index) => `<div class="portifolio-photo-list-item portifolio-photo-list-item-selected" onclick="selectPortifolioImage(${index})"
+
+                onmouseover="selectPortifolioImage(${index})"
+                >
                     <img src="${img}" alt="">
                 </div>`
             );
@@ -648,7 +653,7 @@
 
 
         const portfoliosList = portfolios.map(
-            (p) => `                <div class="card">
+            (p, index) => `                <div class="card">
                     <div class="icon" onclick="showPortfolioPopup('${p.title}')">
                         <img src="${p.image}" alt="">
                     </div>

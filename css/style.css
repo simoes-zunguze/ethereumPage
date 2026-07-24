@@ -225,6 +225,9 @@ p {
 
 }
 
+
+
+
 .portifolio-photo {
     display: block;
     position: relative;
@@ -290,6 +293,17 @@ p {
     color: #181818;
 }
 
+@media only screen and (max-width: 420px) {
+    .modal-wrapper {
+        height: 80%;
+        width: 85%;
+    }
+
+    .portifolio-photo-list-item {
+        height: 40px;
+    }
+}
+
 .portifolio-technologies .technology {}
 
 /*************
@@ -335,12 +349,22 @@ header {
 }
 
 .header-row .col2 .title {
-    background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(240, 240, 240, 0.829) 60.15%);
+    /* background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(240, 240, 240, 0.829) 60.15%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 3px 3px 10px 13px rgb(241, 226, 226);
+    text-shadow: 3px 3px 10px 13px rgb(241, 226, 226); */
     padding: 20px 0;
+}
+
+
+
+.header-row .col2 .title .role {
+    padding-top: 20px;
+    background-clip: unset;
+
+    background-color: none !important;
+    color: var(--main-color);
 }
 
 .header-row .col2 .read-more {

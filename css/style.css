@@ -1085,9 +1085,9 @@ footer {
 
 .partners-row .brand {
     position: relative;
-    width: 90%;
+    width: 90px;
     max-width: 250px;
-    height: 100px;
+    height: 50px;
     margin: 5px;
     padding: 5px;
     display: flex;
@@ -1095,12 +1095,13 @@ footer {
     justify-content: center;
     border-radius: var(--card-border-radius);
     box-shadow: 1px 1px 100px 1px #000000a8;
+    background-color: #d7d7d7;
 }
 
 .partners-row .brand img {
     max-width: 80%;
     transition: 0.5s;
-    height: 100%;
+    max-height: 90%;
 }
 
 .partners-row .brand::after {
@@ -1130,7 +1131,8 @@ footer {
     }
 
     .partners-row .brand {
-        max-width: 200px;
+        width: 160px;
+        height: 80px;
     }
 }
 

@@ -105,6 +105,13 @@ p {
     line-height: 24px;
 }
 
+.logo {
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 5px;
+}
+
 .card-buttons {
     display: flex;
     justify-content: space-between;
@@ -198,6 +205,21 @@ p {
     position: relative;
     padding: 10px;
     /* background: linear-gradient(45deg, #30C623, #3bffe5); */
+}
+
+.close-modal {
+    /* height: 30px; */
+    /* width: 30px; */
+    padding: 0 5px;
+    border-radius: 15px;
+    background-color: red;
+    color: white;
+    font-size: 40px;
+    z-index: 10;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    cursor: pointer;
 }
 
 /* .about-row .card {
@@ -448,9 +470,11 @@ header {
 
 .credit-card .credit-card-logo {
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 10px;
     width: 140px;
+    color: var(--main-color);
+    font-weight: bold;
 }
 
 .credit-card .credit-card-logo img {

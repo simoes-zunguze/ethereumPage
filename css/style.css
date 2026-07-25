@@ -254,10 +254,12 @@ p {
 .portifolio-photo {
     display: block;
     position: relative;
+    cursor: pointer;
 }
 
 .portifolio-photo img {
-    max-width: 100%;
+    max-width: 70%;
+    max-height: 60vh;
     border-radius: 5px;
 }
 
@@ -690,12 +692,15 @@ header {
 }
 
 .about-row .card .icon {
+    position: relative;
     /* background-color: #0045db; */
 }
 
 .about-row .card .icon img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 200px;
     border-radius: var(--card-border-radius);
+    cursor: pointer;
 }
 
 .about-row .card .icon i {
